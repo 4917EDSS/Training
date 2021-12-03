@@ -5,7 +5,6 @@
 #define ROBOT_TYPE "Elegoo "
 ElegooDriveMotors motors;
 
-
 #else
 
 #include "UctronicsDriveMotors.h"
@@ -23,11 +22,11 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   // Drive forward
-  motors.drive(50, 50);
+  motors.drive(70, 70);
   delay(1000);
 
   // Turn right
-  motors.drive(50, -50);
+  motors.drive(70, -70);
   delay(2000);
 
 }

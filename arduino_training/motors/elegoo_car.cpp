@@ -15,18 +15,13 @@ ElegooCar::ElegooCar() :
   m_i16PrevLeft( 0 ),
   m_i16PrevRight( 0 )
 {
-//  // Set Motor Pins to OUTPUT
-//  pinMode( c_u8ENAPin, OUTPUT );
-//  pinMode( c_u8ENBPin, OUTPUT );
-//  pinMode( c_u8IN1Pin, OUTPUT );
-//  pinMode( c_u8IN2Pin, OUTPUT );
-//  pinMode( c_u8IN3Pin, OUTPUT );
-//  pinMode( c_u8IN4Pin, OUTPUT );
-//  
-//  // Set Line Tracking Pins to Input
-//  pinMode( c_u8LineRightPin, INPUT );
-//  pinMode( c_u8LineMiddlePin, INPUT );
-//  pinMode( c_u8LineLeftPin, INPUT );
+  // Set Motor Pins to OUTPUT
+  pinMode( c_u8ENAPin, OUTPUT );
+  pinMode( c_u8ENBPin, OUTPUT );
+  pinMode( c_u8IN1Pin, OUTPUT );
+  pinMode( c_u8IN2Pin, OUTPUT );
+  pinMode( c_u8IN3Pin, OUTPUT );
+  pinMode( c_u8IN4Pin, OUTPUT );
 }
 
 void ElegooCar::setSpeed( int i16LeftPwr, int i16RightPwr ) {
