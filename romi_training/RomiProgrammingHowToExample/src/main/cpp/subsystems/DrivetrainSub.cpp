@@ -8,3 +8,8 @@ DrivetrainSub::DrivetrainSub() = default;
 
 // This method will be called once per scheduler run
 void DrivetrainSub::Periodic() {}
+
+void DrivetrainSub::drive(double leftPower, double rightPower) {
+    m_leftMotor.Set(leftPower);
+    m_rightMotor.Set(rightPower);
+}

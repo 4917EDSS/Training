@@ -4,6 +4,11 @@
 
 #pragma once
 
+#include <frc/BuiltInAccelerometer.h>
+#include <frc/Encoder.h>
+#include <frc/Spark.h>
+//#include "sensors/RomiGyro.h"
+
 #include <frc2/command/SubsystemBase.h>
 
 class DrivetrainSub : public frc2::SubsystemBase {
@@ -14,8 +19,17 @@ class DrivetrainSub : public frc2::SubsystemBase {
    * Will be called periodically whenever the CommandScheduler runs.
    */
   void Periodic() override;
+  void drive(double leftPower, double rightPower);
 
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
+  frc::Spark m_leftMotor{0};
+  frc::Spark m_rightMotor{1};
+
+  frc::Encoder m_leftEncoder{4, 5};
+  frc::Encoder m_rightEncoder{6, 7};
+
+  frc::BuiltInAccelerometer m_accelerometer;
+  //  RomiGyro m_gyro;
 };
