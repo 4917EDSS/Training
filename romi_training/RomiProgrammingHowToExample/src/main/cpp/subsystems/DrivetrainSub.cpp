@@ -11,5 +11,5 @@ void DrivetrainSub::Periodic() {}
 
 void DrivetrainSub::drive(double leftPower, double rightPower) {
     m_leftMotor.Set(leftPower);
-    m_rightMotor.Set(rightPower);
+    m_rightMotor.Set(-rightPower);
 }

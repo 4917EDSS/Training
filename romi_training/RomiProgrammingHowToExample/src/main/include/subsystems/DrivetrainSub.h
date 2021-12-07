@@ -19,7 +19,7 @@ class DrivetrainSub : public frc2::SubsystemBase {
    * Will be called periodically whenever the CommandScheduler runs.
    */
   void Periodic() override;
-  void drive(double leftPower, double rightPower);
+  void drive(double leftPower, double rightPower);  // Power is -1.0 to 1.0
 
  private:
   // Components (e.g. motor controllers and sensors) should generally be
@@ -31,5 +31,6 @@ class DrivetrainSub : public frc2::SubsystemBase {
   frc::Encoder m_rightEncoder{6, 7};
 
   frc::BuiltInAccelerometer m_accelerometer;
-  //  RomiGyro m_gyro;
+  //RomiGyro m_gyro;
+
 };

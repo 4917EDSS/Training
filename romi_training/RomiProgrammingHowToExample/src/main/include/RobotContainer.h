@@ -32,10 +32,8 @@ class RobotContainer {
   ExampleSubsystem m_subsystem;
   DrivetrainSub m_drivetrainSub;
   ExampleCommand m_autonomousCommand;
-  
-  //Controllers and Buttons
+
   frc::Joystick m_driverController{kDriverControllerPort};
-  frc::Joystick m_operatorController{kOperatorControllerPort};
 
   void ConfigureButtonBindings();
 };
