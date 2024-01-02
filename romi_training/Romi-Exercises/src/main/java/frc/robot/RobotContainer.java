@@ -6,11 +6,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.PrintCommand;
+import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.StartEndCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandPS4Controller;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.subsystems.DrivetrainSub;
-import edu.wpi.first.wpilibj2.command.PrintCommand;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a "declarative" paradigm, very
@@ -29,6 +29,9 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+
+    m_drivetrainSub.setDefaultCommand(new RunCommand(
+        () -> m_drivetrainSub.drive(-m_driverController.getLeftY(), -m_driverController.getRightY()), m_drivetrainSub));
   }
 
   /**
