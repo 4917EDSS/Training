@@ -6,8 +6,10 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.PrintCommand;
+import edu.wpi.first.wpilibj2.command.StartEndCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandPS4Controller;
 import frc.robot.Constants.OperatorConstants;
+import frc.robot.subsystems.DrivetrainSub;
 import edu.wpi.first.wpilibj2.command.PrintCommand;
 
 /**
@@ -17,6 +19,7 @@ import edu.wpi.first.wpilibj2.command.PrintCommand;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
+  private final DrivetrainSub m_drivetrainSub = new DrivetrainSub(); // This instantiates the subsystem so you can use it
 
   private final CommandPS4Controller m_driverController =
       new CommandPS4Controller(OperatorConstants.kDriverControllerPort);
@@ -35,6 +38,10 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     m_driverController.cross().onTrue(new PrintCommand("Cross pressed!"));
+
+    m_driverController.circle().whileTrue(new StartEndCommand(() -> m_drivetrainSub.drive(0.25, 0.25),
+        () -> m_drivetrainSub.drive(0.0, 0.0), m_drivetrainSub));
+
   }
 
   /**

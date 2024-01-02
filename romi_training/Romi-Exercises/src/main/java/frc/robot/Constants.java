@@ -17,4 +17,10 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
+
+  public final static class PwmIds {
+    // Romi's motors are connected to PWM 0 and PWM 1
+    public final static int kLeftMotor = 0;
+    public final static int kRightMotor = 1;
+  }
 }
